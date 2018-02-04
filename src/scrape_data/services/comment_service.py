@@ -43,7 +43,12 @@ class CommentService:
                         comments.append(comment)
 
                     if 'paging' in data:
-                        after = data['paging']['cursors']['after']
+
+                        if data['paging']['cursors']['after'] != after[7:]:
+                            after = data['paging']['cursors']['after']
+                        else:
+                            has_next_page = False
+
                     else:
                         has_next_page = False
 
@@ -73,8 +78,13 @@ class CommentService:
                     for comment in data['data']:
                         comments.append(comment)
 
-                    if 'paging' not in data:
-                        after = data['paging']['cursors']['after']
+                    if 'paging' in data:
+
+                        if data['paging']['cursors']['after'] != after[7:]:
+                            after = data['paging']['cursors']['after']
+                        else:
+                            has_next_page = False
+
                     else:
                         has_next_page = False
 

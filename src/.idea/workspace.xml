@@ -64,8 +64,8 @@
       <file leaf-file-name="comment_service.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scrape_data/services/comment_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="35" column="58" lean-forward="false" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="58" />
+            <state relative-caret-position="391">
+              <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding>
                 <element signature="e#92#143#0" expanded="true" />
               </folding>
@@ -76,8 +76,8 @@
       <file leaf-file-name="post_service.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scrape_data/services/post_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="42" column="24" lean-forward="true" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
+            <state relative-caret-position="257">
+              <caret line="50" column="40" lean-forward="true" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
               <folding>
                 <element signature="e#88#139#0" expanded="true" />
               </folding>
@@ -146,10 +146,11 @@
         <option value="$PROJECT_DIR$/scrape_data/helpers/encode.py" />
         <option value="$PROJECT_DIR$/scrape_data/services/file_service.py" />
         <option value="$PROJECT_DIR$/scrape_data/services/scrape_service.py" />
-        <option value="$PROJECT_DIR$/scrape_data/services/comment_service.py" />
         <option value="$PROJECT_DIR$/scrape_data/main.py" />
         <option value="$PROJECT_DIR$/scrape_data/services/page_service.py" />
+        <option value="$PROJECT_DIR$/scrape_data/services/comment_service.py" />
         <option value="$PROJECT_DIR$/scrape_data/services/post_service.py" />
+        <option value="$PROJECT_DIR$/data/bbcnews_posts.json" />
       </list>
     </option>
   </component>
@@ -688,16 +689,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scrape_data/services/comment_service.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="35" column="58" lean-forward="false" selection-start-line="35" selection-start-column="58" selection-end-line="35" selection-end-column="58" />
-          <folding>
-            <element signature="e#92#143#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/bbcnews_info.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -726,21 +717,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/bbcnews_posts.json">
+    <entry file="file://$PROJECT_DIR$/scrape_data/services/comment_service.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="0" column="52436" lean-forward="false" selection-start-line="0" selection-start-column="52436" selection-end-line="0" selection-end-column="52436" />
-          <folding />
+        <state relative-caret-position="391">
+          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding>
+            <element signature="e#92#143#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scrape_data/services/post_service.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="42" column="24" lean-forward="true" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
+        <state relative-caret-position="257">
+          <caret line="50" column="40" lean-forward="true" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
           <folding>
             <element signature="e#88#139#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/bbcnews_posts.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="0" column="1730080" lean-forward="false" selection-start-line="0" selection-start-column="1730080" selection-end-line="0" selection-end-column="1730080" />
+          <folding />
         </state>
       </provider>
     </entry>

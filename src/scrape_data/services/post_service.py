@@ -49,7 +49,12 @@ class PagePostService:
                         print "Done"
 
                     if 'paging' in data:
-                        after = data['paging']['cursors']['after']
+
+                        if data['paging']['cursors']['after'] != after[7:]:
+                            after = data['paging']['cursors']['after']
+                        else:
+                            has_next_page = False
+
                     else:
                         has_next_page = False
 
