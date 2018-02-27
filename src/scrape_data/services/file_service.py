@@ -4,7 +4,7 @@
 @version: 1.0
 @since: Jan 31, 2018
 """
-#!/usr/bin/python
+# !/usr/bin/python
 # coding=utf-8
 from json import dump
 from time import sleep
@@ -18,9 +18,9 @@ class FileService:
     def write(self, data=None, delay=0.1):
         while True:
             try:
-                with open(self.__filePath+'.json', "ab+") as f:
-                    return dump(data, f)
+                with open(self.__filePath + '.json', "ab+") as f:
+                    dump(data, f)
+                    return f.write('\n')
             except Exception as ex:
                 print ex
                 sleep(random() * delay)
-

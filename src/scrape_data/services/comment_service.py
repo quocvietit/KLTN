@@ -14,38 +14,35 @@ class CommentService:
         self.__postId = post_id
         self.__utilities = Utilities()
         self.__commentParams = self.__utilities.get_comment_params()
-        self.__baseUrl = self.__utilities.get_base_url(self.__postId)
         self.__requestUrl = RequestService().get_request_url
 
     def get_comment(self):
         comments = []
         has_next_page = True
-        after = ''
+        url_next = self.__utilities.get_base_url(self.__postId + '/comments')
 
         while has_next_page:
-            after = '' if after is '' else '&after=' + after
-            url_next = self.__baseUrl + after
-            response = self.__requestUrl(url_next, self.__commentParams)
+            try:
+                data = self.__requestUrl(url_next, self.__commentParams)
 
-            if 'comments' in response:
-                data = response['comments']
-
-                if data != '':
-
+                if data is not None and 'data' in data:
                     for comment in data['data']:
-                        if int(comment['comment_count']) > 0:
+                        if 'comment_count' in comment and int(comment['comment_count']) > 0:
                             id = comment['id']
+                            
                             commentData = self.get_comment_level(id)
                             commentLv = dict()
                             commentLv['data'] = commentData
+                            commentLv['total_count'] = len(commentData)
                             comment['comments'] = commentLv
 
                         comments.append(comment)
 
                     if 'paging' in data:
+                        paging = data['paging']
 
-                        if data['paging']['cursors']['after'] != after[7:]:
-                            after = data['paging']['cursors']['after']
+                        if 'next' in paging:
+                            url_next = paging['next']
                         else:
                             has_next_page = False
 
@@ -55,7 +52,8 @@ class CommentService:
                 else:
                     has_next_page = False
 
-            else:
+            except Exception as ex:
+                print ex
                 has_next_page = False
 
         return comments
@@ -63,25 +61,21 @@ class CommentService:
     def get_comment_level(self, id):
         comments = []
         has_next_page = True
-        url = self.__utilities.get_base_url(id)
-        after = ''
+        url_next = self.__utilities.get_base_url(id + "/comments")
 
         while has_next_page:
-            after = '' if after is '' else '&after=' + after
-            url_next = url + after
-            response = self.__requestUrl(url_next, self.__commentParams)
+            try:
+                data = self.__requestUrl(url_next, self.__commentParams)
 
-            if 'comments' in response:
-                data = response['comments']
-
-                if data != '':
+                if data is not None and'data' in data:
                     for comment in data['data']:
                         comments.append(comment)
 
                     if 'paging' in data:
+                        paging = data['paging']
 
-                        if data['paging']['cursors']['after'] != after[7:]:
-                            after = data['paging']['cursors']['after']
+                        if 'next' in paging:
+                            url_next = paging['next']
                         else:
                             has_next_page = False
 
@@ -91,9 +85,8 @@ class CommentService:
                 else:
                     has_next_page = False
 
-            else:
+            except Exception as ex:
+                print ex
                 has_next_page = False
 
         return comments
-
-

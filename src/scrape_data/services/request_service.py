@@ -24,6 +24,7 @@ class RequestService:
                 response = requests.get(url, params=params)
                 if response.status_code == 200:
                     return response.json()
+
             except Exception as e:
                 print e
                 time.sleep(5)
