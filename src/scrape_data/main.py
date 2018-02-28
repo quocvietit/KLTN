@@ -17,7 +17,7 @@ if __name__ == '__main__':
     start_time = datetime.datetime.now()
     print("Start: {}".format(start_time))
 
-    sc.start()
+    #sc.start()
 
     end_time = datetime.datetime.now()
     print "Done\n Time: ".format(end_time - start_time)
