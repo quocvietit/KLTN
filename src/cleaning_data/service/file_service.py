@@ -17,8 +17,8 @@ class FileService:
     def write(self, data=None, delay=0.1):
         while True:
             try:
-                with open(self.__filePath + '.json', "ab+") as f:
-                    return dump(data, f)
+                with open(self.__filePath + '.json', "w+") as f:
+                    return dump(data, f, sort_keys = True, indent= 4)
             except Exception as ex:
                 print ex
                 sleep(random() * delay)

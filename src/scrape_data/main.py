@@ -20,4 +20,4 @@ if __name__ == '__main__':
     #sc.start()
 
     end_time = datetime.datetime.now()
-    print "Done\n Time: ".format(end_time - start_time)
+    print "Done\n Time: {}".format(end_time - start_time)
