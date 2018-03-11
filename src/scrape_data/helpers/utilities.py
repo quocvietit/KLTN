@@ -35,40 +35,32 @@ class Utilities:
                                 + 'reactions.type(HAHA).limit(0).summary(total_count).as(haha),' \
                                 + 'reactions.type(WOW).limit(0).summary(total_count).as(wow),' \
                                 + 'reactions.type(SAD).limit(0).summary(total_count).as(sad),' \
-                                + 'reactions.type(ANGRY).limit(0).summary(total_count).as(angry),'
+                                + 'reactions.type(ANGRY).limit(0).summary(total_count).as(angry)'
 
         self.__postParams = {
-            'fields': [
-                'posts{'
-                + 'id,'
-                + 'created_time,'
-                + 'link,'
-                + 'message,'
-                + 'type,'
-                + 'from,'
-                + 'status_type,'
-                + 'shares,'
-                + self.__reactionParams
-                + 'update_time'
-                + '}'
-            ]
+            'fields': 'id,'
+                      + 'created_time,'
+                      + 'link,'
+                      + 'message,'
+                      + 'type,'
+                      + 'from,'
+                      + 'status_type,'
+                      + 'shares,'
+                      + 'comments.limit(0).summary(true),'
+                      + self.__reactionParams
         }
 
         self.__commentParams = {
-            'fields': [
-                'comments{'
-                + 'id,'
-                + 'created_time,'
-                + 'link,'
-                + 'message,'
-                + self.__reactionParams
-                + 'comment_count'
-                + '}'
-            ]
+            'fields': 'id,'
+                      + 'created_time,'
+                      + 'link,'
+                      + 'message,'
+                      + 'comment_count,'
+                      + self.__reactionParams
         }
 
     def get_base_url(self, id):
-        return self.__baseUrl + id + '?access_token=' + self.__token
+        return self.__baseUrl + id + '?access_token=' + '335667203583506|NonMVS1dqIaQk5PsX1nvJnU17Yo' + '&limit=100'
 
     def get_post_params(self):
         return self.__postParams
