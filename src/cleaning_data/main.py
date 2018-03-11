@@ -23,12 +23,12 @@ if __name__ == '__main__':
                  'bbcnews_posts_2016.json',
                  'bbcnews_posts_2017.json',
                  ]
-    version = 'v1'
+    version = 'v2'
     start_time = datetime.datetime.now()
     print("Start: {}".format(start_time))
 
-    for file in fileNames:
-        clean(path, file, version)
+#    for file in fileNames:
+#        clean(path, file, version)
 
     end_time = datetime.datetime.now()
     print "Done\n Time: {}\n".format(end_time - start_time)

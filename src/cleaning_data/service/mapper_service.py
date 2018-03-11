@@ -59,7 +59,7 @@ class MapperService:
     def format_date(self, date):
         try:
             #date = datetime.datetime.strptime(date, self.__formatDate)
-            date = dateutil.parser.parse('2014-05-18T12:19:24+04:00')
+            date = dateutil.parser.parse(date)
             return date
         except Exception as ex:
             print "Error date: ", ex

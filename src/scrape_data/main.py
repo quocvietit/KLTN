@@ -9,15 +9,16 @@ from scrape_data.services.scrape_service import ScrapeService
 
 
 if __name__ == '__main__':
-    page = 'bbcnews'
+    pages = ['VOATiengViet', 'voiceofamerica']
     path = '../data/'
 
-    sc = ScrapeService(page, path)
+    for page in pages:
+        sc = ScrapeService(page, path)
 
-    start_time = datetime.datetime.now()
-    print("Start: {}".format(start_time))
+        start_time = datetime.datetime.now()
+        print("Start: {}".format(start_time))
 
-    #sc.start()
+        sc.start()
 
-    end_time = datetime.datetime.now()
-    print "Done\n Time: {}".format(end_time - start_time)
+        end_time = datetime.datetime.now()
+        print "Done\n Time: {}".format(end_time - start_time)
