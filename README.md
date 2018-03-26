@@ -5,3 +5,5 @@
 Sinh Viên:  Vương Quốc Việt
 
 GVHD:       Ths.Đặng Thanh Bình
+
+Plan: https://trello.com/b/BWyzAG0G/analyze-and-exploit-web-data
