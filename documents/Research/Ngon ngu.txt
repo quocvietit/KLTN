@@ -1,0 +1,4 @@
+Những đặc điểm giữa tiếng anh và tiếng việt.
+#Tiếng Anh:
+- Là ngôn ngữ đơn lập(isolate) hay còn gọi là loại phi hình thái, không biến hình, đơn âm tiết.
+- Từ không biến đổi hình tháo, ý nghĩa ngữ pháp nằm ngoài từ.

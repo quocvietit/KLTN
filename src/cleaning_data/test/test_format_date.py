@@ -12,5 +12,7 @@ print date.second
 date = dateutil.parser.parse('2014-05-18T12:19:24+04:00')
 print date.second
 
+date = datetime.datetime.now()
+print str(date.day)+" "+str(date.month)+str(date.year)
 
 

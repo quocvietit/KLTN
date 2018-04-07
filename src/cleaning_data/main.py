@@ -14,21 +14,35 @@ def clean(path, file_name, version):
     cleaningData.start()
 
 
+def get_version():
+    date = datetime.datetime.now()
+    day = str(date.day) if date.day >= 10 else "0" + str(date.day)
+    month = str(date.month) if date.day >= 10 else "0" + str(date.month)
+    year = str(date.year)
+
+    return day + month + year
+
+
 if __name__ == '__main__':
     path = '../data/'
-    fileNames = ['bbcnews_posts_2012.json',
-                 'bbcnews_posts_2013.json',
-                 'bbcnews_posts_2014.json',
-                 'bbcnews_posts_2015.json',
-                 'bbcnews_posts_2016.json',
-                 'bbcnews_posts_2017.json',
-                 ]
-    version = 'v2'
+    pages = ['bbcnews',
+             'VOATiengViet',
+             'voiceofamerica']
+    years = ['2012',
+             '2013',
+             '2014',
+             '2015',
+             '2016',
+             '2017']
+    version = get_version()
+
     start_time = datetime.datetime.now()
     print("Start: {}".format(start_time))
 
-#    for file in fileNames:
-#        clean(path, file, version)
+    for page in pages:
+        for year in years:
+            file = page + '_posts_' + year + '.json'
+            clean(path, file, version)
 
     end_time = datetime.datetime.now()
     print "Done\n Time: {}\n".format(end_time - start_time)

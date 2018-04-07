@@ -18,7 +18,7 @@ class FileService:
         while True:
             try:
                 with open(self.__filePath + '.json', "w+") as f:
-                    return dump(data, f, sort_keys = True, indent= 4)
+                    return dump(data, f, sort_keys=True, indent=4)
             except Exception as ex:
                 print ex
                 sleep(random() * delay)

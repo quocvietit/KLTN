@@ -37,7 +37,7 @@ class GetDataService:
     def get_link_post(self):
         if self.__link in self.__data:
             return self.__data[self.__link]
-        return ''
+        return 'No link'
 
     def get_created_time(self):
         if self.__createdTime in self.__data:
@@ -47,17 +47,17 @@ class GetDataService:
     def get_post_type(self):
         if self.__type in self.__data:
             return self.__data[self.__type]
-        return ''
+        return 'No type'
 
     def get_status_type(self):
         if self.__statusType in self.__data:
             return self.__data[self.__statusType]
-        return ''
+        return 'published_story'
 
     def get_message(self):
         if self.__message in self.__data:
             return self.__data[self.__message]
-        return ''
+        return 'No message'
 
     def get_number_comment(self):
         if self.__comments in self.__data:

@@ -4,7 +4,7 @@
 @version: 1.0
 @since: Mar 03, 2018
 """
-import datetime
+import re
 import dateutil.parser
 from cleaning_data.service.get_data_service import GetDataService
 from cleaning_data.models.information_post import InformationPost
@@ -14,7 +14,7 @@ class MapperService:
     def __init__(self, ):
         self.__data = ''
         self.__dataService = ''
-        #self.__formatDate = '%Y-%m-%dT%H:%M:%S.%fZ'
+        # self.__formatDate = '%Y-%m-%dT%H:%M:%S.%fZ'
 
     def set_data(self, json_data):
         self.__data = json_data
@@ -30,8 +30,8 @@ class MapperService:
             informationPost.link = self.__dataService.get_link_post()
             informationPost.from_name = self.__dataService.get_from()
             informationPost.type = self.__dataService.get_post_type()
-            informationPost.statusType = self.__dataService.get_status_type()
-            informationPost.message = self.__dataService.get_message()
+            informationPost.status_type = self.__dataService.get_status_type()
+            informationPost.message = self.cleanning_special_characters(self.__dataService.get_message())
             informationPost.comments = self.__dataService.get_number_comment()
             informationPost.shares = self.__dataService.get_number_share()
             informationPost.reactions = self.__dataService.get_number_reaction()
@@ -58,10 +58,23 @@ class MapperService:
 
     def format_date(self, date):
         try:
-            #date = datetime.datetime.strptime(date, self.__formatDate)
+            # date = datetime.datetime.strptime(date, self.__formatDate)
             date = dateutil.parser.parse(date)
             return date
         except Exception as ex:
             print "Error date: ", ex
 
         return None
+
+    def unicode_encode(self, text):
+        return text.encode("utf-8")
+
+    def cleanning_special_characters(self, text):
+        text = self.unicode_encode(text)
+        dt = {'\r': '', '\n': '', '\"':''}
+        return self.replace_all(text, dt)
+
+    def replace_all(self, text, dt):
+        for i, j in dt.iteritems():
+            text = text.replace(i, j)
+        return text

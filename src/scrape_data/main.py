@@ -18,20 +18,24 @@ def scrap(page, path, since, until):
     sc.start()
 
     end_time = datetime.datetime.now()
-    print "Done\n Time: ".format(end_time - start_time)
+    print "Done\n Time: {} ".format(end_time - start_time)
     print "-------------------------------"
 
+
 if __name__ == '__main__':
-    pages = ['VOATiengViet', 'voiceofamerica']
+    print "Scrape Data"
+'''
+    pages = ['VOATiengViet',
+             'voiceofamerica']
     path = '../data/'
 
     for page in pages:
         print "Page info"
-        ScrapeService(page, path, '', '').scrape_page_info()
+       ScrapeService(page, path, '', '').scrape_page_info()
 
         print "2017"
         scrap(page, path, '2017-01-01', '2017-12-31')
-
+    
         print "2016"
         scrap(page, path, '2016-01-01', '2016-12-31')
 
@@ -46,3 +50,4 @@ if __name__ == '__main__':
 
         print "2012"
         scrap(page, path, '2012-01-01', '2012-12-31')
+'''

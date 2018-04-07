@@ -12,7 +12,7 @@ class InformationPost:
         self.link = ''
         self.from_name = ''
         self.type = ''
-        self.statusType = ''
+        self.status_type = ''
         self.created_time_year = 0
         self.created_time_month = 0
         self.created_time_day = 0
