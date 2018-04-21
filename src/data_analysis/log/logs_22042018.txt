@@ -1,0 +1,17 @@
+22042018
+2018-04-22 01:10:19,349 [MainThread  ] [INFO ] - Started
+2018-04-22 01:10:19,351 [MainThread  ] [INFO ] - Started install library
+2018-04-22 01:10:24,954 [MainThread  ] [DEBUG] - Install punkt: TRUE
+2018-04-22 01:10:24,971 [MainThread  ] [DEBUG] - Install averaged_perceptron_tagger: TRUE
+2018-04-22 01:10:24,971 [MainThread  ] [INFO ] - Finished install library
+2018-04-22 01:10:24,980 [MainThread  ] [INFO ] - Clean text
+2018-04-22 01:10:24,982 [MainThread  ] [DEBUG] - Remove ascii
+2018-04-22 01:10:24,982 [MainThread  ] [DEBUG] - Remove punctuation
+2018-04-22 01:10:24,982 [MainThread  ] [DEBUG] - Create dictionary punctuation
+2018-04-22 01:10:24,982 [MainThread  ] [DEBUG] - Replace punctuation
+2018-04-22 01:10:24,982 [MainThread  ] [DEBUG] - Remove stop words
+2018-04-22 01:10:24,983 [MainThread  ] [DEBUG] - Get stop words
+2018-04-22 01:10:24,983 [MainThread  ] [DEBUG] - Remove digit
+2018-04-22 01:10:24,983 [MainThread  ] [DEBUG] - Lemmatization text
+2018-04-22 01:10:28,615 [MainThread  ] [INFO ] - Finished
+2018-04-22 01:10:28,615 [MainThread  ] [INFO ] - Time: 0:00:09.266000s

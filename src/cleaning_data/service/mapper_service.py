@@ -71,7 +71,7 @@ class MapperService:
 
     def cleanning_special_characters(self, text):
         text = self.unicode_encode(text)
-        dt = {'\r': '', '\n': '', '\"':''}
+        dt = {'\r': ' ', '\n': ' ', '\"':' '}
         return self.replace_all(text, dt)
 
     def replace_all(self, text, dt):

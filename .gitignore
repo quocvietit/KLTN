@@ -1,2 +1,6 @@
 *.json
 *.pyc
+*.docx
+*.pdf
+*.csv
+*.pyc
