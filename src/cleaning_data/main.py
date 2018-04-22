@@ -17,7 +17,7 @@ def clean(path, file_name, version):
 def get_version():
     date = datetime.datetime.now()
     day = str(date.day) if date.day >= 10 else "0" + str(date.day)
-    month = str(date.month) if date.day >= 10 else "0" + str(date.month)
+    month = str(date.month) if date.month >= 10 else "0" + str(date.month)
     year = str(date.year)
 
     return day + month + year
