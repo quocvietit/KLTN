@@ -29,6 +29,9 @@ class ReadFilesService:
 			doc_content = fp.read()
 			doc_complete.append(doc_content)
 
+		#print(doc_complete)
+		print(len(doc_complete))
+
 	def get_paths(self):
 		file_paths = [os.path.join(self.__path, p) for p in os.listdir(self.__path)]
 		return file_paths

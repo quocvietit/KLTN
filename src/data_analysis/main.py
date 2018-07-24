@@ -10,6 +10,7 @@ import datetime
 from data_analysis.utils.logger_initializer import initialize_logger
 from data_analysis.utils.install_library import InstallLibrary
 from data_analysis.service.clean_text_service import CleanTextService
+from data_analysis.service.read_files_service import ReadFilesService
 
 if __name__ == '__main__':
 	initialize_logger()
@@ -19,8 +20,9 @@ if __name__ == '__main__':
 
 	InstallLibrary()
 
-	text = "this is a texts, 123, !@#$%^&*(, numbers cc, b, c,a, hello?"
-	print (CleanTextService().start(text))
+	#text = "this is a texts, 123, !@#$%^&*(, numbers cc, b, c,a, hello?"
+	#print (CleanTextService().start(text))
+	ReadFilesService().start()
 
 	finished = datetime.datetime.now()
 	time = finished - started
